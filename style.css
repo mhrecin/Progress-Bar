@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+:root{
+    --line-border-fill: #662c88;
+    --line-border-empty: rgb(212, 199, 221);
+}
+
+body {
+    background-color: white;
+    font-family: 'Merienda';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin:0;
+    color: rgb(3, 3, 75);
+}
+
+.container{
+    text-align:center;
+}
+
+.progress-container{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 30px;
+    max-width: 100%;
+    width: 350px;
+}
+
+.progress-container::before {
+    content:'';
+    background-color: #e0e0e0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress{
+    background-image: linear-gradient(to right, rgb(236, 179, 179),rgb(223, 193, 139),rgb(233, 233, 161),rgb(165, 221, 165),rgb(155, 155, 224),rgb(197, 157, 226),violet);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: .4s ease;
+}
+
+.circle{
+    background-color: rgb(221, 200, 217);
+    color: rgb(94, 11, 105);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition: .4s ease;
+}
+.circle.active{
+    border-color: var(--line-border-fill);
+}
+
+.btn{
+    background-color: var(--line-border-fill);
+    color: white;
+    border:0;
+    border-radius: 6px;
+    cursor:pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+    font-size: 14px;
+}
+
+.btn:active{
+    transform: sclae(.98);
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
+}
